@@ -18,7 +18,8 @@ const totalOfsplitedandBillAmount = document.querySelector('.total');
 
 const totalPeopel = document.querySelector('.total-people');
 
-console.log(totalPeopel);
+const tipAmountPercentage = document.querySelector('.percentage')
+
 
 // --------------------------------------------------------------------------------------
 
@@ -149,6 +150,8 @@ function calculateWithTips(e) {
 	const totalTipandBill = billAmountIs + getTipAmount;
 
 	totalOfsplitedandBillAmount.innerText = `$${totalTipandBill.toFixed(2)}`;
+
+	tipAmountPercentage.innerText =  valuefind + '%';
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -180,6 +183,8 @@ customTips.addEventListener('input', function () {
 	const totalTipandBill = billAmountIs + customeTipAmount;
 
 	totalOfsplitedandBillAmount.innerText = `$${totalTipandBill.toFixed(2)}`;
+
+	tipAmountPercentage.innerText =  customeTip + '%';
 });
 
 // ---------------------------------------------------------------------------------------------------
