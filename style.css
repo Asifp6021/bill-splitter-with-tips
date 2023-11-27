@@ -328,6 +328,11 @@ button {
 	button {
 		margin-top: 20rem;
 	}
+
+	.logo div {
+		padding: var(--padding-st-xxl-v) 0;
+		
+	}
 }
 
 @media screen and (min-width: 1200px) {
