@@ -275,13 +275,13 @@ button {
 	gap: 1rem;
 }
 
-.attribution p, a {
+.attribution p,
+a {
 	font-size: 2rem;
 }
 /* -------------------------------------------------------------------------- media query */
 
 @media screen and (min-width: 500px) {
-
 	body {
 		background: none;
 	}
