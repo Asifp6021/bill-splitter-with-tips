@@ -30,17 +30,7 @@ function calculateWithoutTips() {
 	const billAmountIs = Number(billAmount.value);
 	const peoplesAre = Number(peoples.value);
 
-	if (billAmountIs === '' || billAmountIs === 0) {
-		errorIs(errorOne, billAmount);
-	}
-
-	if (peoplesAre === '' || peoplesAre === 0) {
-		errorIs(errorTwo, peoples);
-
-		totalAmount.innerText = `$${billAmountIs.toFixed(2)}`;
-	} else {
-		calculatetotalAndPeopel(billAmountIs, peoplesAre);
-	}
+	throwError(billAmountIs, peoplesAre);
 }
 
 // -------------------------------------------------------------------------------------------------------------
@@ -56,6 +46,23 @@ function errorIs(err, clrIs) {
 		clrIs.classList.remove('errBorder');
 	}, 3000);
 }
+
+// conditions for showing error and and when there is error it is setting total to total billamount
+function throwError(billAmountIs, peoplesAre) {
+	if (billAmountIs === '' || billAmountIs === 0) {
+		errorIs(errorOne, billAmount);
+	}
+
+	if (peoplesAre === '' || peoplesAre === 0 || !Number.isInteger(peoplesAre)) {
+		errorIs(errorTwo, peoples);
+
+		totalAmount.innerText = `$${billAmountIs.toFixed(2)}`;
+	} else {
+		calculatetotalAndPeopel(billAmountIs, peoplesAre);
+	}
+}
+
+// --------------------------------------------------------------------------------------
 
 // removing active class from tips percentile and setting calculation to base calculation
 function removeActiveTipPercentile() {
@@ -76,6 +83,9 @@ function calculatetotalAndPeopel(billAmountIs, peoplesAre) {
 
 	totalAmount.innerText = `$${result.toFixed(2)}`;
 }
+
+
+
 // ---------------------------------------------------------------------------------------------------
 
 // adding tips with provided percentage and calculating it and upadating result
@@ -88,11 +98,14 @@ function calculateWithTips(e) {
 	const billAmountIs = Number(billAmount.value);
 	const peoplesAre = Number(peoples.value);
 
+	throwError(billAmountIs, peoplesAre);
+
 	if (
 		billAmountIs === '' ||
 		billAmountIs === 0 ||
 		peoplesAre === '' ||
-		peoplesAre === 0
+		peoplesAre === 0 ||
+		!Number.isInteger(peoplesAre)
 	)
 		return;
 
@@ -126,7 +139,8 @@ customTips.addEventListener('input', function () {
 		billAmountIs === '' ||
 		billAmountIs === 0 ||
 		peoplesAre === '' ||
-		peoplesAre === 0
+		peoplesAre === 0 ||
+		!Number.isInteger(peoplesAre)
 	)
 		return;
 
