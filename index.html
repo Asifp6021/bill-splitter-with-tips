@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png" />
+
+		<!-- linked stylesheet -->
+		<link
+			rel="stylesheet"
+			href="style.css" />
+
+		<title>Frontend Mentor | Tip calculator app</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="logo content-limit sec-pad">
+			<div>
+				<img
+					src="images/logo.svg"
+					alt="logo"
+					loading="lazy"
+					class="logo" />
+			</div>
+		</div>
+
+		<section class="content-limit calculator">
+			<div class="calculator__container flex-clmn">
+				<form class="calculator--form flex-clmn sec-pad">
+					<fieldset class="calculator__form--input flex-clmn">
+						<div>
+							<p class="calculator__form--input-title txt">Bill</p>
+							<p class="errorOne">can't be empty</p>
+						</div>
+					
+
+						<div class="inputIs">
+							<input
+							class="input-holder bill"
+							type="text"
+							placeholder="0" />
+						<img
+							src="images/icon-dollar.svg"
+							alt="icon-dollar"
+							loading="lazy" />
+						</div>
+						
+					</fieldset>
+
+					<div class="calculator__form--tips flex-clmn
+					">
+					
+						<p class="calculator__form--tip-title txt">Select Tip %</p>
+
+						<div>
+							<p class="tip__percent">5%</p>
+							<p class="tip__percent">10%</p>
+							<p class="tip__percent">15%</p>
+							<p class="tip__percent">25%</p>
+							<p class="tip__percent">50%</p>
+							
+								<input type="text" class="custom" placeholder="Custom">
+							
+							
+						</div>
+					</div>
+
+					<fieldset class="calculator__form--input flex-clmn">
+
+						<div>
+							<p class="calculator__form--input-title txt">Number of People</p>
+							<p class="errorTwo">can't be zero</p>
+						</div>
+						
+
+						<div class="inputIs">
+							<input
+							class="input-holder people"
+							type="text"
+							placeholder="0" />
+						<img
+							src="images/icon-person.svg"
+							alt="icon-dollar"
+							loading="lazy" />
+						</div>
+						
+					</fieldset>
+				</form>
+
+				<div class="results sec-pad">
+					<div class="result  flex-clmn sec-pad">
+						<div class="result__tipAmount flex">
+							<div>
+								<p class="title txt">Tip Amount</p>
+								<p class="title__sub">/ person</p>
+							</div>
+							<p class="amount tip__amount">$0.00</p>
+						</div>
+	
+						<div class="result__tipAmount flex">
+							<div>
+								<p class="title txt">Total</p>
+								<p class="title__sub">/ person</p>
+							</div>
+							<p class="amount total-amount">$0.00</p>
+						</div>
+	
+						<button type="button" class="btn">Reset</button>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+
+		
+
+		<div class="attribution">
+			<p>Challenge by</p>
+			<a
+				href="https://www.frontendmentor.io?ref=challenge"
+				target="_blank"
+				>Frontend Mentor Coded by</a
+			> <a href="#">Asif Patel</a>.
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>

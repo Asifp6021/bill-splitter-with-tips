@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/************************* reseting font size  */
+	font-size: 10px;
+
+	/************************* colors  */
+	--Strong-cyan: hsl(172, 67%, 45%);
+	--Very-dark-cyan: hsl(183, 100%, 15%);
+	--Dark-grayish-cyan: hsl(186, 14%, 43%);
+	--Grayish-cyan: hsl(184, 14%, 56%);
+	--Light-grayish-cyan: hsl(185, 41%, 84%);
+	--Very-light-grayish-cyan: hsl(189, 41%, 97%);
+	--White: hsl(0, 0%, 100%);
+
+	/************************* font-sizes  */
+	--font-size-st-xxxl: 7rem;
+	--font-size-st-xxl: 5.5rem;
+	--font-size-st-xl: 4rem;
+	--font-size-st-lc: 3.5rem;
+	--font-size-st-l: 3rem;
+	--font-size-st-mc: 2.5rem;
+	--font-size-st-m: 2rem;
+	--font-size-st-sc: 1.5rem;
+	--font-size-st-s: 1rem;
+
+	/************************* font-weights  */
+	--extra-light: 200;
+	--light: 300;
+	--regular: 400;
+	--medium: 500;
+	--semi-bold: 600;
+	--bold: 700;
+	--extra-bold: 800;
+	--w-bold: 900;
+
+	/************************* paddings  */
+	--padding-st-xxxl-h: 7rem;
+	--padding-st-xxxl-v: 6rem;
+
+	--padding-st-xxl-h: 6rem;
+	--padding-st-xxl-v: 5rem;
+
+	--padding-st-xl-h: 4rem;
+	--padding-st-xl-v: 3.5rem;
+
+	--padding-st-lc-h: 3.5rem;
+	--padding-st-lc-v: 3rem;
+
+	--padding-st-l-h: 3rem;
+	--padding-st-l-v: 2rem;
+
+	--padding-st-m-h: 2rem;
+	--padding-st-m-v: 1.5rem;
+
+	--padding-st-s-h: 1rem;
+	--padding-st-s-v: 1rem;
+
+	/************************* font-family  */
+	--font-family: 'Space Mono', monospace;
+}
+
+body {
+	font-family: var(--font-family);
+	line-height: 1.5;
+	background-color: var(--Light-grayish-cyan);
+}
+
+input,
+button,
+fieldset {
+	border: none;
+	outline: none;
+	background: none;
+}
+
+/* ------------------------------ utility classes -------------- */
+
+.content-limit {
+	display: flex;
+	justify-content: center;
+}
+
+.content-limit div:first-child {
+	max-width: 1400px;
+}
+
+.flex {
+	display: flex;
+}
+
+.txt {
+	font-size: var(--font-size-st-sc);
+	color: var(--Very-dark-cyan);
+}
+
+.sec-pad {
+	padding: var(--padding-st-lc-v) var(--padding-st-m-h);
+}
+
+.flex-clmn {
+	display: flex;
+	flex-direction: column;
+}
+
+/* ------------------------------ styles -------------- */
+
+.logo div {
+	padding: var(--padding-st-l-v) 0;
+	width: 7rem;
+}
+
+.logo div img {
+	width: 100%;
+	cursor: pointer;
+	object-fit: cover;
+}
+
+.calculator {
+	background-color: var(--White);
+	border-top-right-radius: 5%;
+	border-top-left-radius: 5%;
+}
+
+.calculator__container {
+	width: 100%;
+	gap: 2rem;
+}
+
+.calculator--form {
+	gap: 3rem;
+}
+
+.calculator__form--input {
+	gap: 1rem;
+}
+
+.inputIs {
+	position: relative;
+}
+
+.input-holder {
+	padding: var(--padding-st-s-h);
+	background-color: var(--Very-light-grayish-cyan);
+	text-align: right;
+	padding-right: 2rem;
+	width: 100%;
+	color: var(--Very-dark-cyan);
+	font-size: 2.4rem;
+	font-weight: bold;
+	cursor: pointer;
+	border: 2px solid transparent;
+}
+
+.input-holder:hover,
+.calculator__form--tips div input:hover {
+	border: 2px solid var(--Strong-cyan);
+}
+
+.calculator__form--input img {
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+	top: 30%;
+	left: 1rem;
+}
+
+.calculator__form--tips {
+	gap: 1rem;
+}
+
+.calculator__form--tips div {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(min-content, 1fr));
+	gap: 1rem;
+}
+
+.tip__percent {
+	padding: 0.2rem 1rem;
+	background-color: var(--Very-dark-cyan);
+	text-align: center;
+	font-size: var(--font-size-st-mc);
+	color: white;
+	font-weight: var(--bold);
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.calculator__form--tips div input {
+	width: 100%;
+	height: 100%;
+	font-size: var(--font-size-st-mc);
+	text-indent: 2rem;
+	background-color: var(--Very-light-grayish-cyan);
+	color: var(--Very-dark-cyan);
+	font-weight: var(--bold);
+	border: 2px solid transparent;
+}
+
+.results {
+	padding: 0 var(--padding-st-m-h);
+}
+
+.result {
+	background-color: var(--Very-dark-cyan);
+	gap: 2rem;
+	border-radius: 1rem;
+}
+
+.title {
+	color: var(--White);
+	font-weight: var(--bold);
+}
+
+.result__tipAmount {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title__sub {
+	color: var(--Dark-grayish-cyan);
+	font-size: 1.2rem;
+}
+
+.amount {
+	font-size: var(--font-size-st-l);
+	font-weight: var(--bold);
+	color: var(--Strong-cyan);
+}
+
+button {
+	padding: 1.5rem 2rem;
+	background-color: var(--Strong-cyan);
+	font-size: var(--font-size-st-m);
+	text-transform: uppercase;
+	font-weight: var(--bold);
+	color: var(--Very-dark-cyan);
+	cursor: pointer;
+}
+
+.calculator__form--input div:first-child {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.errorOne,
+.errorTwo {
+	font-size: 1.2rem;
+	color: red;
+	opacity: 0;
+}
+
+.active {
+	background-color: var(--Strong-cyan);
+	color: var(--Very-dark-cyan);
+}
+
+.errBorder {
+	border: 2px solid red;
+}
+
+.attribution {
+	margin-top: 4rem;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.attribution p, a {
+	font-size: 2rem;
+}
+/* -------------------------------------------------------------------------- media query */
+
+@media screen and (min-width: 500px) {
+
+	body {
+		background: none;
+	}
+
+	.logo {
+		background-color: var(--Light-grayish-cyan);
+	}
+	.sec-pad {
+		padding: var(--padding-st-lc-v) var(--padding-st-l-h);
+	}
+
+	.txt {
+		font-size: var(--font-size-st-m);
+	}
+
+	.input-holder {
+		padding: 1.5rem 0;
+		padding-right: 2rem;
+	}
+
+	.tip__percent {
+		padding: 1rem;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.calculator__container {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.sec-pad {
+		padding: var(--padding-st-lc-v) var(--padding-st-l-h);
+	}
+	.calculator--form,
+	.results {
+		flex-basis: 50%;
+	}
+
+	.result {
+		height: 100%;
+		padding-bottom: 0;
+	}
+
+	button {
+		margin-top: 20rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.calculator--form,
+	.results {
+		flex-basis: 35%;
+	}
+
+	.calculator__form--tips div {
+		grid-template-columns: repeat(3, minmax(min-content, 1fr));
+		gap: 1rem;
+	}
+
+	button {
+		margin-top: 17rem;
+	}
+}
