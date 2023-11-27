@@ -18,8 +18,11 @@ const totalOfsplitedandBillAmount = document.querySelector('.total');
 
 const totalPeopel = document.querySelector('.total-people');
 
-const tipAmountPercentage = document.querySelector('.percentage')
+const tipAmountPercentage = document.querySelector('.percentage');
 
+// disabled button
+resetBtn.disabled = true;
+resetBtn.style.opacity = '50%';
 
 // --------------------------------------------------------------------------------------
 
@@ -32,6 +35,8 @@ function showResult() {
 	removeActiveTipPercentile();
 
 	customTips.value = '';
+
+	unableBtn();
 }
 
 // this function calculates without tips and updating resutlt and this is base calculation
@@ -151,7 +156,9 @@ function calculateWithTips(e) {
 
 	totalOfsplitedandBillAmount.innerText = `$${totalTipandBill.toFixed(2)}`;
 
-	tipAmountPercentage.innerText =  valuefind + '%';
+	tipAmountPercentage.innerText = valuefind + '%';
+
+	unableBtn();
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -184,7 +191,9 @@ customTips.addEventListener('input', function () {
 
 	totalOfsplitedandBillAmount.innerText = `$${totalTipandBill.toFixed(2)}`;
 
-	tipAmountPercentage.innerText =  customeTip + '%';
+	tipAmountPercentage.innerText = customeTip + '%';
+
+	unableBtn();
 });
 
 // ---------------------------------------------------------------------------------------------------
@@ -197,3 +206,8 @@ resetBtn.addEventListener('click', function () {
 	customTips.value = '';
 	location.reload();
 });
+
+function unableBtn() {
+	resetBtn.disabled = false;
+	resetBtn.style.opacity = '100%';
+}

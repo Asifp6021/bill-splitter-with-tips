@@ -251,6 +251,7 @@ button {
 	font-weight: var(--bold);
 	color: var(--Very-dark-cyan);
 	cursor: pointer;
+	border-radius: 1rem;
 }
 
 .calculator__form--input div:first-child {
