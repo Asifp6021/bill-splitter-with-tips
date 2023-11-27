@@ -214,7 +214,7 @@ fieldset {
 
 .result {
 	background-color: var(--Very-dark-cyan);
-	gap: 2rem;
+	gap: 1.3rem;
 	border-radius: 1rem;
 }
 
@@ -351,6 +351,6 @@ button {
 	}
 
 	button {
-		margin-top: 17rem;
+		margin-top: 1.5rem;
 	}
 }

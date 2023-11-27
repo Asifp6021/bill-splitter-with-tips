@@ -12,6 +12,14 @@ const resetBtn = document.querySelector('.btn');
 
 const customTips = document.querySelector('.custom');
 
+const totalBill = document.querySelector('.bill-amount');
+
+const totalOfsplitedandBillAmount = document.querySelector('.total');
+
+const totalPeopel = document.querySelector('.total-people');
+
+console.log(totalPeopel);
+
 // --------------------------------------------------------------------------------------
 
 billAmount.addEventListener('input', showResult);
@@ -56,7 +64,13 @@ function throwError(billAmountIs, peoplesAre) {
 	if (peoplesAre === '' || peoplesAre === 0 || !Number.isInteger(peoplesAre)) {
 		errorIs(errorTwo, peoples);
 
-		totalAmount.innerText = `$${billAmountIs.toFixed(2)}`;
+		totalOfsplitedandBillAmount.innerText = `$${billAmountIs.toFixed(2)}`;
+
+		totalBill.innerText = `$${billAmountIs.toFixed(2)}`;
+
+		totalAmount.innerText = '$0.00';
+
+		totalPeopel.innerText = 0;
 	} else {
 		calculatetotalAndPeopel(billAmountIs, peoplesAre);
 	}
@@ -82,9 +96,13 @@ function calculatetotalAndPeopel(billAmountIs, peoplesAre) {
 	const result = billAmountIs / peoplesAre;
 
 	totalAmount.innerText = `$${result.toFixed(2)}`;
+
+	totalBill.innerText = `$${billAmountIs.toFixed(2)}`;
+
+	totalOfsplitedandBillAmount.innerText = `$${billAmountIs.toFixed(2)}`;
+
+	totalPeopel.innerText = peoplesAre;
 }
-
-
 
 // ---------------------------------------------------------------------------------------------------
 
@@ -127,6 +145,10 @@ function calculateWithTips(e) {
 	totalAmount.innerText = `$${finualTotalAmount.toFixed(2)}`;
 
 	tipAmount.innerText = `$${getTipAmount.toFixed(2)}`;
+
+	const totalTipandBill = billAmountIs + getTipAmount;
+
+	totalOfsplitedandBillAmount.innerText = `$${totalTipandBill.toFixed(2)}`;
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -154,6 +176,10 @@ customTips.addEventListener('input', function () {
 	totalAmount.innerText = `$${finualTotalAmountWithCustomTip.toFixed(2)}`;
 
 	tipAmount.innerText = `$${customeTipAmount.toFixed(2)}`;
+
+	const totalTipandBill = billAmountIs + customeTipAmount;
+
+	totalOfsplitedandBillAmount.innerText = `$${totalTipandBill.toFixed(2)}`;
 });
 
 // ---------------------------------------------------------------------------------------------------
